@@ -1,0 +1,4 @@
+**/node_modules/
+**/mongo-ms/
+.mongo-ms
+common
