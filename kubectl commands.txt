@@ -1,0 +1,14 @@
+Get command shell
+kubectl exec -it [pod name] -- sh
+
+Create a simple text file by echoing in contents
+echo 'Hello from Kubernetes storage' > index.html
+
+Edit text file
+cat index.html
+
+start a deployment
+kubectl apply -f [deployment yaml]
+
+delete pod and services
+kubectl delete pod,service [name]

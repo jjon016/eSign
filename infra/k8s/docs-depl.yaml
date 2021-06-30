@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: docs-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: docs
+  template:
+    metadata:
+      labels:
+        app: docs
+    spec:
+      containers:
+        - name: docs
+          image: fadeleafj/docs
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: docs-srv
+spec:
+  selector:
+    app: docs
+  ports:
+    - name: docs
+      protocol: TCP
+      port: 3000
+      targetPort: 3000
